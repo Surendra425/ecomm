@@ -12,7 +12,7 @@
             <input type="hidden" value="" name="country" id="country">
             <select class="form-control clsLoginField" id="country_id" name="country_id" tabindex="5">
                 @foreach($country as $item)
-                    <option value="{{$item->id}}" data-countryname = {{$item->country_name}} {{$item->country_name == 'Kuwait' || $item->country_name == 'KUWAIT' ? 'selected' : ''}} >{{$item->country_name}}</option>
+                <option value="{{$item->id}}" data-countryname = {{$item->country_name}} {{$item->country_name == 'Kuwait' || $item->country_name == 'KUWAIT' ? 'selected' : ''}} >{{$item->country_name}}</option>
                 @endforeach
             </select>
         </div>
@@ -68,4 +68,7 @@
             <input type="text" id="landline" name="landline" class="form-control phonNumberOnly clsLoginField numeric" placeholder="Landline Number" tabindex="15">
         </div>
     </div>
+   
+
+
 </div>

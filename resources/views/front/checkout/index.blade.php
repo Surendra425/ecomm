@@ -142,13 +142,65 @@
                             @endif
                         </div>
                     </div>
-                    <div class="panel1 panel-success">
-                        <div class="panel-heading">
+
+
+                    <input type="hidden" name="payment_type" value="CreditCard">
+
+                  <div class="col-md-12">
+
+                        <div class="form-group">
+                          <label for="creditCardNumber"> Card Number <span class="asteric">*</span></label>
+                          <input  autocomplete='off'  id="cardNumber" class='form-control  clsLoginField card-number' size='20'  type='text' name="cardNumber" placeholder="Card Number">
+                      </div>
+
+                    </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                     <label for="MM"> MM <span class="asteric">*</span></label>
+                     <select class="form-control clsLoginField card-expiry-month" id="mm" name="mm" tabindex="6">
+                        <option value="">MM</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                     <label for="YYYY"> YYYY <span class="asteric">*</span></label>
+                     <input  class='form-control card-expiry-year clsLoginField' placeholder='YYYY' size='4' name="yyyy" type='text' minlength="4" maxlength="4">
+                 </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                     <label for="CVC"> CVC <span class="asteric">*</span></label>
+                     <input  class='form-control card-cvc clsLoginField' placeholder='CVC' size='4' name="cvc"  type='text'>
+                 </div>
+                </div>
+
+
+
+
+
+
+                    <div class="panel1 panel-success hide">
+                        <div class="panel-heading hide">
                             <button class="accordionPayment" type="button">PAYMENT METHOD</button>
                         </div>
                         <div class="panel-body PAYMENT">
 
-                            <div class="radioGrp">
+                            <div class="radioGrp hide">
                                 <input type="radio" value="CreditCard" id="creditCard"  checked name="payment_type">
                                 <span class="radio_custom"></span>
                                 <label for="creditCard" class="payment-method">
@@ -157,9 +209,9 @@
                             </div>
                             <label id="payment_type-error" class="error" for="payment_type" style="display: none;">please select payment method</label>
 
-                            <div class="cardClass">
+                            <!-- <div class="cardClass"> -->
 
-                                <div class="row">
+                                <!-- <div class="row">
                                 <div class="col-md-12">
                                  <div class="col-md-12">
                                     <div class="form-group">
@@ -177,7 +229,6 @@
                                         <div class="col-md-6">
                                                 <div class="form-group">
                                                    <label for="MM"> MM <span class="asteric">*</span></label>
-                                                 <!--   <input class='form-control card-expiry-month clsLoginField' placeholder='MM' size='2' name="mm" type='text'> -->
                                                    <select class="form-control clsLoginField card-expiry-month" id="mm" name="mm" tabindex="6">
                                                             <option value="">MM</option>
                                                             <option value="01">01</option>
@@ -214,7 +265,7 @@
                                         </div>
                                         
                                     </div>
-                                </div>
+                                </div> -->
 
 
 
@@ -225,7 +276,7 @@
                                      <input class='form-control card-expiry-month' placeholder='MM' size='2'  type='text'>
                                      <input  class='form-control card-expiry-year' placeholder='YYYY' size='4'  type='text'> -->
                             
-                            </div>
+                            <!-- </div> -->
 
                             <div class="radioGrp hide">
                                 <input type="radio" id="test2" value="KNet" name="payment_type">
@@ -568,8 +619,8 @@
 
                            
 
-                                if($("input[name='payment_type']:checked").val() == "CreditCard")
-                                {
+                                // if($("input[name='payment_type']:checked").val() == "CreditCard")
+                                // {
                                     Stripe.setPublishableKey($form.data('stripe-publishable-key'));
                                     Stripe.createToken({
                                         number: $('.card-number').val(),
@@ -577,10 +628,10 @@
                                         exp_month: $('.card-expiry-month').val(),
                                         exp_year: $('.card-expiry-year').val()
                                     }, stripeResponseHandler);
-                                }
-                                else{
-                                    form.submit();
-                                }
+                                // }
+                                // else{
+                                //     form.submit();
+                                // }
 
 
                        

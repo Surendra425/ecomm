@@ -293,7 +293,7 @@
                             </button>
                         </div>
                         <div class="col-sm-3 col-md-3 col-lg-2">
-                            <a href="{{ url('') }}"><img alt="logo" src="{{ url('assets/logo.png') }}" style="margin-top:-10px !important;" height="70px" id="logo"></a>
+                            <a href="{{ url('') }}"><img alt="logo" src="{{ url('assets/logo.png') }}" style="margin-top:-25px !important;padding-left:35px;" height="90px" id="logo"></a>
                         </div>
                         <form id="searchKey" method="get" action="{{url(route('searchProduct'))}}">
                             <div class="col-sm-6 col-md-7 col-lg-8" id="search">
